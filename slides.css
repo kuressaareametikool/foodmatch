@@ -1,0 +1,7 @@
+@import url("https://unpkg.com/fachwerk/dist/style.css");
+.button {
+  @apply border-2 border-orange-600 text-orange-600 font-normal text-center block w-full px-6 py-2 lg:px-6 lg:py-3 rounded transition-all;
+}
+.center {
+  @apply grid auto-rows-min gap-2 place-content-center place-items-center
+}
