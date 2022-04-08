@@ -174,5 +174,4 @@ class: p-8
 <div class="text-2xl font-medium">font-medium 500</div>
 <div class="text-2xl font-semibold">font-medium 600</div>
 <div class="text-2xl font-semibold">font-bold 700</div>
-
 <br />
