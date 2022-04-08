@@ -38,6 +38,20 @@ const Background = {
   `,
 };
 
+const AnimatedBackground = {
+  inheritAttrs: false,
+  template: `
+  <div class="absolute inset-0 bg-orange-200 overflow-hidden">
+    <Icon id="fluent:food-pizza-20-regular" class="bounce absolute top-[5%] left-[50%] w-64 h-64 -ml-4 text-orange-300/50" />
+    <Icon id="fluent:food-apple-24-regular" class="bounce -rotate-12 absolute top-[30%] left-[5%] w-48 h-48 -ml-4 text-orange-300/50" />
+    <Icon id="mdi:food-turkey" class="bounce rotate-12 absolute top-[60%] left-[40%] w-64 h-64 -ml-4 text-orange-300/50" />
+  </div>
+  <div class="absolute inset-0" v-bind="$attrs">
+    <slot />
+  </div
+  `,
+};
+
 const Logo = {
   template: `
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,4 +59,4 @@ const Logo = {
   </svg>
   `,
 };
-export const components = { Background, Carousel, Logo };
+export const components = { AnimatedBackground, Background, Carousel, Logo };

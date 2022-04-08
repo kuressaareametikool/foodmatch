@@ -3,7 +3,7 @@ global:
   class: p-5 !prose-headings:m-0 prose-headings:black/90 !prose-img:m-0 bg-orange-200
 ---
 
-<Background class="center">
+<AnimatedBackground class="center">
 
 <Logo class="spin w-24 h-24 -ml-4 text-orange-500" />
 
@@ -58,7 +58,7 @@ class: bg-orange-200 prose-h1:opacity-4 !place-items-start
 
 <div class="font-semibold text-2xl flex gap-2 items-center w-full">
 <div v-for="i in 6" class="border-b-2 border-black/80">
-<input type="number" minlength="1" maxlength="1" class="w-full bg-transparent border-none rounded focus:ring-2 outline-none ring-orange-200 font-semibold text-2xl" v-model="f.phone" />
+<input type="number" minlength="1" maxlength="1" class="w-full bg-transparent border-none rounded focus:ring-2 outline-none ring-orange-200 font-semibold text-2xl" v-model="f.code" />
 </div>
 </div>
 
@@ -123,15 +123,37 @@ I believe my indentity is based on gourmet food. My favorite food to cook is sus
 </div>
 
 ---
-class: center
+class: p-8
 ---
 
-# Ready to upgrade?
 
-### Here are some real benefits
+# Styleguide
 
+<br />
 
----
+## Colors
+
+<br />
+
+<div class="bg-orange-200 p-4">bg-orange-200</div>
+
+<div class="bg-orange-300 p-4">bg-orange-300</div>
+
+<div class="bg-orange-500 p-4">bg-orange-500</div>
+
+<br />
+
+## Font
+
+<br />
+
+[Rubik from Google Fonts](https://fonts.google.com/specimen/Rubik?query=rubik)
+
+<br />
+
+## Font sizes
+
+<br />
 
 <div class="text-xs">text-xs 12px</div>
 <div class="text-sm">text-sm 14px</div>
@@ -141,3 +163,16 @@ class: center
 <div class="text-2xl">text-2xl 24px</div>
 <div class="text-3xl">text-3xl 30px</div>
 <div class="text-4xl">text-4xl 36px</div>
+
+<br />
+
+## Font weigths
+
+<br />
+
+<div class="text-2xl font-normal">font-normal 400</div>
+<div class="text-2xl font-medium">font-medium 500</div>
+<div class="text-2xl font-semibold">font-medium 600</div>
+<div class="text-2xl font-semibold">font-bold 700</div>
+
+<br />
