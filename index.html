@@ -70,6 +70,21 @@
         },
       };
 
+      const Icon = {
+        props: ["id"],
+        setup(props) {
+          const icon = ref("");
+          const [collection, name] = props.id.split(":");
+          fetch(`https://unpkg.com/@iconify/json/json/${collection}.json`)
+            .then((res) => res.json())
+            .then(({ icons }) => {
+              icon.value = icons[name].body;
+            });
+          return { icon };
+        },
+        template: `<svg class="w-5 h-5 inline-block align-middle" viewBox="0 0 24 24" v-html="icon" />`,
+      };
+
       export async function createFachwerk({
         setup = {},
         components = {},
@@ -100,6 +115,7 @@
               max-w-none
               min-h-screen
               prose
+              prose-headings:m-0
               md:prose-lg
               xl:prose-2xl
               prose-p:max-w-[70ch]
@@ -108,19 +124,6 @@
               prose-code:before:content-none
               prose-code:after:content-none
               prose-code:px-1
-              2xl:prose-p:text-3xl
-              2xl:prose-p:leading-relaxed
-              2x:prose-p:my-[2.5vw]
-              2xl:prose-h1:text-8xl
-              2xl:prose-h2:text-6xl
-              2xl:prose-h3:text-4xl
-              2xl:prose-h4:text-3xl
-              2xl:prose-h5:text-2xl
-              2xl:prose-code:text-2xl
-              2xl:prose-code:leading-[2.5em]
-              2xl:prose-pre:p-[2.5vw]
-              2xl:prose-pre:max-w-[120ch]
-              2xl:prose-li:text-3xl
               `,
             s.frontmatter?.global?.class,
             s.frontmatter?.class
@@ -149,23 +152,8 @@
       </div-->
       `;
 
-        const Icon = {
-          props: ["id"],
-          setup(props) {
-            const icon = ref("");
-            const [collection, name] = props.id.split(":");
-            fetch(`https://unpkg.com/@iconify/json/json/${collection}.json`)
-              .then((res) => res.json())
-              .then(({ icons }) => {
-                icon.value = icons[name].body;
-              });
-            return { icon };
-          },
-          template: `<svg class="w-5 h-5 inline-block align-middle" viewBox="0 0 24 24" v-html="icon" />`,
-        };
-
         const App = {
-          components: { Icon, ...components },
+          components,
           setup() {
             const menuRef = ref(null);
             const menuIgnoreRef = ref(null);
@@ -212,6 +200,7 @@
 
         const app = createApp(App);
         app.use(Fachwerk);
+        app.component("Icon", Icon);
         app.config.globalProperties.data = data;
         app.mount("#app");
       }

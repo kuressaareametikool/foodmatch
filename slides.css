@@ -1,7 +1,10 @@
 @import url("https://unpkg.com/fachwerk/dist/style.css");
 .button {
-  @apply border-2 border-orange-600 text-orange-600 font-normal text-center block w-full px-6 py-2 lg:px-6 lg:py-3 rounded transition-all;
+  @apply bg-white shadow-lg text-orange-500 text-center text-lg block w-full px-6 py-3 lg:px-6 lg:py-3 rounded-xl;
 }
 .center {
+  @apply grid auto-rows-min gap-3 place-content-center place-items-center text-center
+}
+.left {
   @apply grid auto-rows-min gap-2 place-content-center place-items-center
 }
